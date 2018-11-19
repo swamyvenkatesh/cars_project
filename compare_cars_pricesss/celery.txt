@@ -1,0 +1,32 @@
+==============Install the celery ==============
+pip install celery
+pip install django-celery
+
+===============To setup the rabbit mq ====================
+
+sudo rabbitmqctl add_user myuser mypassword
+sudo rabbitmqctl add_vhost myvhost
+sudo rabbitmqctl set_permissions -p myvhost myuser ".*" ".*" ".*"
+
+
+============== To start the celery ==============
+
+python manage.py celeryd -l INFO
+
+============= To test the periodic tasks ==================
+
+python manage.py celeryd -B -l DEBUG
+
+
+If celery is already running or exists the run these commands and test the periodic tasks using above command : 
+
+rabbitmqadmin delete queue name='celery' 
+
+rabbitmqadmin list queues name 
+
+
+
+
+For Reference : 
+
+link is : http://www.mechanicalgirl.com/post/scheduling-periodic-tasks-celery-233-and-django-14/

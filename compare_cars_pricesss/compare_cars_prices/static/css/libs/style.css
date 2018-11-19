@@ -1,0 +1,233 @@
+body, html, ul, li, p, a, img, span, h1, h2, h3, h4, h5, h6{font-family: "Ubuntu",sans-serif;padding: 0px;margin: 0px;border: 0 none;}
+header.scroll-to-fixed-fixed .logo_section .left_section {
+    margin-bottom: 0;
+    margin-top: 3px;
+}
+ul li {
+    list-style-type: none;
+}
+header{height: 100px; background: #FFCF00;font-family: "Verdana", Sans-serif}
+@font-face {
+    font-family: myFirstFont;
+    src: url(.../fonts/Sansation_Light.ttf);
+}
+body{
+   /* font-family: myFirstFont;*/
+    font-family: "Verdana", Sans-serif;
+    
+}
+.main {
+    background-color: #F7F7F7;    
+    
+}
+.head {width: 1000px; margin: 0px auto;}
+/*header .logo, header .search_form input[type="text"], header .logo_section .left_section, header div.contact_info {
+}
+.logo_section .left_section {
+    float: left;
+    margin-bottom: 9px;
+    width: 670px;
+}*/
+
+.left_section{width:400px;float: left;}
+.left_section h1 {font-style: italic;font-weight: bolder;}
+.search_section{
+    width:500px;
+    float: left; 
+    height: 30px;
+    margin-top: 30px;
+    /*box-shadow: 16px 16px #FFAE00;*/
+    border-radius: 5px;
+   /* position: relative;*/
+    border: none!important;
+}
+.search_form #search{width: 550px;margin-left: 0px;height: 30px;
+    border: none!important;border-radius: 5px;
+    box-shadow: 6px 6px #FFAE00;
+}
+.search_form input[type="text"]{padding-left: 15px;}
+/*.search_form input[type="submit"] {
+    background: transparent url("../img/search_icon.png") no-repeat scroll 0% 0%;
+    border: 0px none;
+    cursor: pointer;
+    display: inline-block;
+    height: 22px;
+    position: absolute;
+    right: 18px;
+    text-indent: -99999px;
+    top: 17px;
+    width: 22px;
+    margin-right: 268px;
+    margin-top: 23px;
+}
+*/
+section {
+    width:1000px; 
+    margin : 0px auto; 
+    height:1500px; 
+    background:#FFFFFF;
+    margin-top:200px;
+    box-shadow: 1px 2px 3px #000;
+    /*box-shadow: 0px -4px 7px -2px #CCC inset;*/
+}
+
+section .asideFilter{
+    width: 300px;
+   /* background-color: #FFCF00;*/
+    float: left;
+    height: 100%;
+    border-right: 1px solid #E6E6E6;
+
+}
+section .asideInfo{
+    width: 690px;
+   /* background-color: grey;*/
+    height: 100%;
+    float: left;
+    padding-top: 30px;
+
+}
+select .city{
+box-shadow: 0px 0px 3px #FFF inset, 0px 1px 1px rgba(0, 0, 0, 0.1);}
+.filters{
+    width: 250px;
+    margin: 0px auto;
+}
+.makes{
+    width: 250px;
+    margin: 0px auto;
+    height: 1250px;
+    background: #F8F8F8;
+    border: 1px solid grey;
+    border-radius: 5px;
+    position: relative;
+
+}
+.makeHead{
+    font-weight: bolder;
+    font-size: 16px;
+    font-family: "Ubuntu",sans-serif;
+    margin: 0px auto;
+    padding: 15px;
+}
+.makeHead input[type=checkbox]{float: right; 
+    box-sizing: initial;
+    margin-right: 24px;
+}
+.makes li{    
+    margin-left: 42px;
+}
+.makes li input[type=checkbox]{float: right; 
+    box-sizing: initial;
+    margin-right: 24px; }
+footer{
+    height: 70px;
+    background-color: grey;
+/*    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;*/
+
+}
+
+section .asideInfo .listing_item{
+    width: 90%;
+    height: 220px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+   /* background: ;*/
+    border-radius: 5px;
+    /*border: 1px solid;*/
+    box-shadow: 1px 2px 3px 4px #E6E6E6; 
+}
+section .asideInfo .listing_item:hover {box-shadow: 1px 2px 3px 3px#FA8D00;}
+
+section .asideInfo .listing_item .car_details{width: 100%;}
+div .img-div{
+    /*border: 1px solid black;*/
+width: 285px;
+height: 183px;
+background: red;
+}
+
+div .details-div{
+ /*   margin-top: -177px;*/
+/*border: 1px solid #000;*/
+width: 250px;
+height: 168px;
+padding: 7px;
+float: right;
+background-color: blue;
+}
+
+.subtitles{
+    padding-top: 10px;
+    color: gray;
+    font-weight: initial;
+
+}
+
+
+
+/* Go To Top start*/
+.gototop {
+    background-image: url("../img/gototop_sprite.png");
+    background-position: -47px 0px;
+    width: 43px;
+    height: 32px;
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    z-index: 100;
+}
+a {
+    text-decoration: none;
+    outline: 0px none;
+    color: inherit;
+}
+/* Go To Top end */
+
+.filter_section .filter_section_title.closed span {
+    background-position: 0px -22px;
+}
+
+.filter_section .filter_section_title span {
+    background-image: url("../img/accordion_arrow.png");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: text-top;
+    position: absolute;
+    right: 0px;
+}
+
+/*.car_details{
+    width: 90%;
+}*/
+
+/*.car_details{
+border: 1px solid #808080;
+border-radius: 10px;
+padding: 5px;
+margin-bottom: 30px;
+background-color: white;
+width: 572px;
+height: 220px;
+box-shadow: 1px 2px 3px #000;
+}
+.img-div{
+
+width: 285px;
+height: 183px;
+}
+.details-div{
+    margin-top: -177px;
+
+width: 250px;
+height: 168px;
+padding: 7px;
+float: right;
+}
+
+*/

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block extra_head %}{% endblock %}
+<script src="{{ STATIC_URL }}js/angular/angular.min.js"></script>
+<script src="{{ STATIC_URL }}js/app/sampleapp.js"></script>
+{% block content %}
+    <div class="main container-fluid">
+        <!-- <div class="hedr container-fluid"> -->
+        
+            <!-- header part start-->
+            <header class="scroll-to-fixed-fixed" style="z-index: 1000; position: fixed; top: 0px; margin-left: 0px; width: 100%; left: 0px;">
+                <div class="head container">
+                    <div class="logo_section">
+                        <div class="wrapper clearfix">
+                            <div class="left_section">
+                                <h1 style="margin-top:25px;">CompareCarPrices
+                                    <!-- <img src="images/logo.png"> --></h1>
+                                        
+                            </div>
+                            <div class="search_section">
+                                <form class="search_form">
+                                    <input id="search" class="autoCompleteBox" type="text" placeholder="City, Make, Model, Year" autocomplete="off">
+                                    <!-- <input onclick="SelectOption(); return false;" type="submit">     -->   
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- header part end--> 
+        
+  
+        
+        <!--Content Part start-->
+        <section>
+            <ng-view view-state> 
+                
+            </ng-view>
+        <!-- Content Part end-->
+        </section>
+        
+    </div>
+    
+{% endblock %}
+<!-- {% block extra_content %}
+
+{% endblock %} -->

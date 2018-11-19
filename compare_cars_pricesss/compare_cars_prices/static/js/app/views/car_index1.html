@@ -1,0 +1,143 @@
+<br>
+<div>
+<div class="row" when-scrolled = "more()"> 
+
+                <div class="selectFilter">
+
+                    
+                    <div class="filter">
+                    <h4>Select City</h4> 
+                    <select ng-model="CityFilter" ng-options="city for city in cities" ng-change="onChange(CityFilter)" class="City-Filter" >
+                        
+                    </select>
+                                    
+                                                
+                    </div><br><br>
+
+                    <div class="filters">
+                        <h4>Makes</h4> 
+                        
+                        <accordion>
+                            <ul ng-repeat = "item in items" class="accordion-style">
+                                <li  style="list-style:none;">
+                                    <accordion-group is-open="isopen" >
+                                        <accordion-heading ng-click="isopen=!isopen" >
+                                            <div ng-click="hai()">
+                                                <h3 id="acc_title" style="font-weight:normal;">{[{ item.title}]} </h3>
+
+                                            </div>
+                                        </accordion-heading>
+                                        <div ng-repeat = "model in item.models" >
+                                            <h6><a href="#{[{ CityFilter }]}/{[{ item.title }]}/{[{ model }]}" id="acc_subtitle" ng-model="ModelFilter" ng-click="show()">{[{ model }]}</a></h6>
+                                    </div>
+                                    </accordion-group>
+                                </li>
+                            </ul>
+                        </accordion>
+                    </div>
+                    
+                    <br><br>
+                    
+                    <div class="filters"><h4>Select Price</h4>
+
+                    <slider floor="30000" ceiling="9000000" step="100000" ng-model-low="priceRange.low_price_bound" ng-model-high="priceRange.high_price_bound" ></slider>
+                    Selected price Range: <strong>{[{ priceRange.low_price_bound }]}</strong><br>
+                    <strong>{[{ priceRange.high_price_bound }]}</strong>
+    
+                    </div><br><br>
+                    
+                    <div class="filters"><h4>Select Model Year</h4>
+
+                    <select class="form-control City-Filter" ng-model= "search.model_year">
+                            <option>1989</option>
+                            <option>1992</option>
+                            <option>1994</option>
+                            <option>1998</option>
+                            <option>2000</option>
+                            <option>2001</option>
+                            <option>2002</option>
+                            <option>2003</option>
+                            <option>2004</option>
+                            <option>2005</option>
+                            <option>2006</option>
+                            <option>2007</option>
+                            <option>2008</option>
+                            <option>2009</option>
+                            <option>2010</option>
+                            <option>2011</option>
+                            <option>2012</option>
+                            <option>2013</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                        </select>
+                    
+
+                    </div>
+                <!--Filters end -->
+                </div>
+        
+                <!--Details Start -->
+            <div ng-show="loading">
+                <img class="spinner" src="http://michaelrienstra.com/jquery.cspinner/demo/spinner.gif"/>
+            </div>
+            
+            
+            
+            <div class="selectDetails" >
+
+            <div class="span9">
+                <h2 style="text-align:center">information </h2>
+                
+                
+                <div ng-repeat="model in models | limitTo:1 | filter: search | filter:priceRange" >
+                    <div class="car_details" id="{[{ $index }]}" ng-show="firstOne">
+                        <div class="img-div">
+                            <img src="{[{ model.car_image }]}" alt="Sorry,Image not found" style="margin-top: 15px;">
+                        </div>
+                        <div class="details-div">
+                            <h4><a href="{[{ model.car_href }]}" target="new">{[{ model.car_title }]}</a></h4>
+                            <h5 class="subtitles">Model : {[{ model.car_model }]}</h5>
+                            <h5 class="subtitles">City : {[{ model.city }]}</h5>
+                            <h5 class="subtitles">Model Year : {[{ model.model_year }]}</h5>
+                            <h5 class="subtitles">Price : {[{ model.price }]}</h5>
+                            <!-- <h5 class="subtitles">Car color : {[{ model.car_color }]}</h5> -->
+
+                        </div>
+                        <h6 style="float: right; margin-left: 200px;">Website : {[{ model.website_name }]}</h6>
+                        <h6>Posted on : {[{ model.created }]}</h6>
+                    </div>
+                    <div ng-show="see_more">
+                        <h6 ><button ng-click="onAll()" class="seemore">SeeMore</button></h6>
+                    </div>
+
+                </div>
+
+                <div ng-repeat="model in models | filter: search | filter:priceRange" >
+                    <div class="car_details" id="{[{ $index }]}" ng-show="allData" >
+                        <div class="img-div">
+                         <img src="{[{ model.car_image }]}" alt="Sorry,Image not found" style="margin-top: 15px;">
+                        </div>
+                        <div class="details-div">
+                            <h4><a href="{[{ model.car_href }]}" target="new">{[{ model.car_title }]}</a></h4>
+                            <h5 class="subtitles">Model : {[{ model.car_model }]}</h5>
+                            <h5 class="subtitles">City : {[{ model.city }]}</h5>
+                            <h5 class="subtitles">Model Year : {[{ model.model_year }]}</h5>
+                            <h5 class="subtitles">Price : {[{ model.price }]}</h5>
+                        </div>                      
+                        <h6 style="float: right; margin-left: 200px;">Website : {[{ model.website_name }]}</h6>
+                        <h6>Posted on : {[{ model.created }]}</h6>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+
+        
+                                
+                        
+                
+                <!--Details Close -->
+            
+                <div class="col-md-2"></div>
+</div>
+</div>
